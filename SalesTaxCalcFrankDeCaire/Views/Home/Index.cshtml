@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@using (Html.BeginForm("ParseInput", "Home", FormMethod.Post))
+{
+    <div>
+        <table>
+            <thead>
+            <tr><td>Paste Your Input Here</td><td>Output</td></tr>
+            </thead>
+            <tbody>
+            <tr><td><textarea name="txtInput" cols="80" rows="15">@ViewBag.Input</textarea></td><td><textarea name="txtOutput" cols="80" rows="15">@ViewBag.Result</textarea></td></tr>
+            </tbody>
+        </table>
+        <div class="ErrorIndicator">@ViewBag.Error</div>
+    </div>
+    <div><input type="submit" name="btnCalculate" value="Calculate"/></div>
+}
